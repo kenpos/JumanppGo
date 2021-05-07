@@ -1,20 +1,25 @@
 package jumanappGo
 
-// func Jumanpp(tweet string) string {
-// 	tweetstr := tweet
-// 	cmdstr := "echo " + tweetstr + "|jumanpp.exe --model=jumandic.jppmdl --force-single-path"
-// 	stdout, err := exec.Command("sh", "-c", cmdstr).Output()
+import (
+	"fmt"
+	"os/exec"
+)
 
-// 	if err != nil {
-// 		fmt.Println(err)
-// 	}
+func Jumanpp(tweet string) string {
+	tweetstr := tweet
+	cmdstr := "echo " + tweetstr + "|jumanpp.exe --model=jumandic.jppmdl --force-single-path"
+	stdout, err := exec.Command("sh", "-c", cmdstr).Output()
 
-// 	return string(stdout)
-// }
+	if err != nil {
+		fmt.Println(err)
+	}
 
-// func Hello(name string) {
-// 	fmt.Printf("Hello, %s!\n", name)
-// }
+	return string(stdout)
+}
+
+func Hello(name string) {
+	fmt.Printf("Hello, %s!\n", name)
+}
 
 func Hello() string {
 	return "Hello"
