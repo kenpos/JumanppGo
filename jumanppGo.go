@@ -1,5 +1,10 @@
 package jumanappGo
 
+import (
+	"fmt"
+	"os/exec"
+)
+
 func Jumanpp(tweet string) string {
 	tweetstr := tweet
 	cmdstr := "echo " + tweetstr + "|jumanpp.exe --model=jumandic.jppmdl --force-single-path"
@@ -8,12 +13,9 @@ func Jumanpp(tweet string) string {
 	if err != nil {
 		fmt.Println(err)
 	}
-	// fmt.Printf("ls result: \n%s", string(stdout))
 
 	return string(stdout)
 }
-
-import "fmt"
 
 func Hello(name string) {
 	fmt.Printf("Hello, %s!\n", name)
