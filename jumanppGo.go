@@ -17,10 +17,6 @@ func Jumanpp(tweet string) string {
 	return string(stdout)
 }
 
-func Hello(name string) {
-	fmt.Printf("Hello, %s!\n", name)
-}
-
 func Hello() string {
 	return "Hello"
 }
