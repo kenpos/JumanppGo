@@ -41,7 +41,7 @@ func stuffingStandardDic(str string) []StandardDic {
 		if len(tmp) <= 1 {
 			break
 		}
-		dic = append(dic, Set(tmp))
+		dic = append(dic, set(tmp))
 	}
 	return dic
 }
@@ -58,6 +58,6 @@ func jumanpp(str string) string {
 }
 
 func JumanDic(str string) []StandardDic {
-	stdout := Jumanpp(str)
+	stdout := jumanpp(str)
 	return stuffingStandardDic(string(stdout))
 }
