@@ -152,14 +152,3 @@ func JumanDic(str string) []StandardDic {
 	}
 	return listdata
 }
-
-// func main() {
-// 	lists := JumanDic("怖いけどお化け屋敷が好きなので今日も遊園地に行きます。")
-
-// 	for _, v := range lists {
-// 		fmt.Printf("見出し:%s \n読み:%s \n原型:%s \n品詞:%s \n分類:%s \n活用1:%s \n活用2:%s \n意味:%s \nrepname:%s\n感情評価:%s\n", v.Midasi, v.Yomi, v.Genkei, v.Hinsi, v.Bunrui, v.Katuyou1, v.Katuyou2, v.Imis, v.Repname, v.Value)
-// 	}
-
-// 	eval, sum := AverageVolume(lists)
-// 	fmt.Println(eval, ":", sum)
-// }
