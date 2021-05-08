@@ -1,7 +1,5 @@
 package jumanppGo
 
-// package main
-
 import (
 	"fmt"
 	"io/ioutil"
@@ -117,7 +115,7 @@ func checkVolume(listdata StandardDic, dic []Dic) StandardDic {
 func AverageVolume(listdata []StandardDic) (float64, float64) {
 	var avevalue float64
 	avevalue = 0.0
-	cnt := 0
+	cnt := 1
 	for _, v := range listdata {
 		// valstr := string(v.Value[0])
 		var val float64
