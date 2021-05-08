@@ -59,7 +59,7 @@ func stuffingStandardDic(str string) []StandardDic {
 
 	for _, s := range spstr {
 		tmp := strings.Split(s, " ")
-		if len(tmp) <= 1 {
+		if len(tmp) <= 8 {
 			break
 		}
 		dic = append(dic, set(tmp))
@@ -91,7 +91,10 @@ func jumanpp(str string) string {
 }
 
 func initData() string {
-	data, _ := ioutil.ReadFile("pn_ja.dic")
+	data, err := ioutil.ReadFile("pn_ja.dic")
+	if err != nil {
+		fmt.Println(err)
+	}
 	return string(data)
 }
 
@@ -117,7 +120,6 @@ func AverageVolume(listdata []StandardDic) (float64, float64) {
 	avevalue = 0.0
 	cnt := 1
 	for _, v := range listdata {
-		// valstr := string(v.Value[0])
 		var val float64
 		var err error
 		values := strings.Replace(v.Value, "\r", "", -1)
@@ -125,9 +127,7 @@ func AverageVolume(listdata []StandardDic) (float64, float64) {
 		if err != nil {
 			log.Fatal(err)
 		}
-
 		avevalue = avevalue + val
-
 		if val != 0 {
 			cnt = cnt + 1
 		}
