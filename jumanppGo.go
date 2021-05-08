@@ -1,6 +1,4 @@
-package jumanappGo
-
-// package main
+package jumanppGo
 
 import (
 	"fmt"
@@ -20,7 +18,6 @@ type standardDic struct {
 	repname  string
 }
 
-// doExample exampleのNameフィールドに引数のstringを指定して返す
 func Set(n []string) standardDic {
 	var s standardDic
 	s.midasi = n[0]
@@ -64,12 +61,3 @@ func JumanDic(str string) []standardDic {
 	stdout := Jumanpp(str)
 	return stuffingStandardDic(string(stdout))
 }
-
-// func main() {
-// 	dics := JumanDic("魅力的な街に住んでいます")
-// 	// fmt.Println(dics)
-
-// 	for _, v := range dics {
-// 		fmt.Println(v.midasi)
-// 	}
-// }
