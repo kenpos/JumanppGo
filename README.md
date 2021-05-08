@@ -25,14 +25,16 @@ Sample Code
 package main
 
 import (
-	"github.com/kenpos/JumanppGo"
+	"fmt"
+	jumanppGo "github.com/kenpos/JumanppGo"
 )
 
 func main() {
-	dics := JumanDic("魅力的な街に住んでいます")
+	dics := jumanppGo.JumanDic("魅力的な街に住んでいます")
 
+	fmt.Println(dics)
 	for _, v := range dics {
-		fmt.Println(v.midasi, v.yomi, v.genkei, v.hinsi,v.bunui,v.katuyou1,v.katuyou2,v.imis,v.repname)
+		fmt.Printf("見出し:%s \n読み:%s \n原型:%s \n品詞:%s \n分類:%s \n活用1:%s \n活用2:%s \n意味:%s \nrepname:%s \n", v.Midasi, v.Yomi, v.Genkei, v.Hinsi, v.Bunrui, v.Katuyou1, v.Katuyou2, v.Imis, v.Repname)
 	}
 }
 ```
