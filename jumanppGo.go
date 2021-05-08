@@ -18,8 +18,8 @@ type StandardDic struct {
 	repname  string
 }
 
-func set(n []string) standardDic {
-	var s standardDic
+func set(n []string) StandardDic {
+	var s StandardDic
 	s.midasi = n[0]
 	s.yomi = n[1]
 	s.genkei = n[2]
@@ -32,8 +32,8 @@ func set(n []string) standardDic {
 	return s
 }
 
-func stuffingStandardDic(str string) []standardDic {
-	var dic []standardDic
+func stuffingStandardDic(str string) []StandardDic {
+	var dic []StandardDic
 	spstr := strings.Split(str, "\n")
 
 	for _, s := range spstr {
@@ -57,7 +57,7 @@ func jumanpp(str string) string {
 	return string(stdout)
 }
 
-func JumanDic(str string) []standardDic {
+func JumanDic(str string) []StandardDic {
 	stdout := Jumanpp(str)
 	return stuffingStandardDic(string(stdout))
 }
