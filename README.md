@@ -15,6 +15,9 @@ go get github.com/kenpos/JumanppGo
 
 Put the pre-built jumanpp and dictionary data in the same folder as the Go Source Code you want to run.
 
+Please refer to this blog for the build
+[Trust your heart fatty](https://kenpos.dev/post-531/)
+
 ## How to Use
 
 Sample Code
