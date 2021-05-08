@@ -6,7 +6,7 @@ import (
 	"strings"
 )
 
-type standardDic struct {
+type StandardDic struct {
 	midasi   string
 	yomi     string
 	genkei   string
@@ -18,7 +18,7 @@ type standardDic struct {
 	repname  string
 }
 
-func Set(n []string) standardDic {
+func set(n []string) standardDic {
 	var s standardDic
 	s.midasi = n[0]
 	s.yomi = n[1]
@@ -46,7 +46,7 @@ func stuffingStandardDic(str string) []standardDic {
 	return dic
 }
 
-func Jumanpp(str string) string {
+func jumanpp(str string) string {
 	cmdstr := "echo " + str + "|jumanpp.exe --model=jumandic.jppmdl --force-single-path"
 	stdout, err := exec.Command("sh", "-c", cmdstr).Output()
 
