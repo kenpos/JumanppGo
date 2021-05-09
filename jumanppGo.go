@@ -83,7 +83,7 @@ func stuffingDic(str string) []Dic {
 }
 
 func jumanpp(str string) string {
-	com := regexp.MustCompile(`[\(.*\)|&lt;&gt;┌┛’,;’;≡三|´]`)
+	com := regexp.MustCompile(`^([0-9A-Za-z]|[\x82-\x9f\xe0-\xef]|[\x40-\x7e\x80-\xfc])`)
 	str = com.ReplaceAllString(str, "")
 	fmt.Println(str)
 	cmdstr := "echo " + str + "|jumanpp.exe --model=jumandic.jppmdl --force-single-path"
