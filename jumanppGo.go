@@ -1,6 +1,7 @@
 package jumanppGo
 
 import (
+	"fmt"
 	"io/ioutil"
 	"os/exec"
 	"strconv"
@@ -81,6 +82,7 @@ func stuffingDic(str string) []Dic {
 }
 
 func jumanpp(str string) string {
+	fmt.Println(str)
 	cmdstr := "echo " + str + "|jumanpp.exe --model=jumandic.jppmdl --force-single-path"
 	stdout, err := exec.Command("sh", "-c", cmdstr).Output()
 	if err != nil {
