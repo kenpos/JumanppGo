@@ -1,7 +1,6 @@
 package jumanppGo
 
 import (
-	"fmt"
 	"io/ioutil"
 	"os/exec"
 	"strconv"
@@ -85,7 +84,7 @@ func jumanpp(str string) string {
 	cmdstr := "echo " + str + "|jumanpp.exe --model=jumandic.jppmdl --force-single-path"
 	stdout, err := exec.Command("sh", "-c", cmdstr).Output()
 	if err != nil {
-		fmt.Println(err)
+		log.Fatal(err)
 	}
 	return string(stdout)
 }
@@ -93,7 +92,7 @@ func jumanpp(str string) string {
 func initData() string {
 	data, err := ioutil.ReadFile("pn_ja.dic")
 	if err != nil {
-		fmt.Println(err)
+		log.Fatal(err)
 	}
 	return string(data)
 }
