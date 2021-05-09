@@ -57,12 +57,12 @@ func stuffingStandardDic(str string) []StandardDic {
 	var dic []StandardDic
 	spstr := strings.Split(str, "\n")
 
-	for _, s := range spstr {
+	for index, s := range spstr {
 		tmp := strings.Split(s, " ")
 		if len(tmp) <= 8 {
 			break
 		}
-		dic = append(dic, set(tmp))
+		dic[index] = set(tmp)
 	}
 	return dic
 }
@@ -71,12 +71,12 @@ func stuffingDic(str string) []Dic {
 	var dic []Dic
 	spstr := strings.Split(str, "\n")
 
-	for _, s := range spstr {
+	for index, s := range spstr {
 		tmp := strings.Split(s, ":")
 		if len(tmp) <= 1 {
 			break
 		}
-		dic = append(dic, setDic(tmp))
+		dic[index] = setDic(tmp)
 	}
 	return dic
 }
@@ -102,10 +102,9 @@ func checkVolume(listdata StandardDic, dic []Dic) StandardDic {
 	truee := false
 	for _, s := range dic {
 		if listdata.Midasi == s.Midasi {
-			if listdata.Yomi == s.Yomi {
-				listdata.Value = s.Value
-				truee = true
-			}
+			listdata.Value = s.Value
+			truee = true
+			break
 		}
 	}
 	if truee == false {
