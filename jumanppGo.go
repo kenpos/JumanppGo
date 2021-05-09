@@ -4,6 +4,7 @@ import (
 	"fmt"
 	"io/ioutil"
 	"os/exec"
+	"regexp"
 	"strconv"
 	"strings"
 
@@ -83,6 +84,8 @@ func stuffingDic(str string) []Dic {
 
 func jumanpp(str string) string {
 	fmt.Println(str)
+	com := regexp.MustCompile("`'")
+	str = com.ReplaceAllString(str, "")
 	cmdstr := "echo " + str + "|jumanpp.exe --model=jumandic.jppmdl --force-single-path"
 	stdout, err := exec.Command("sh", "-c", cmdstr).Output()
 	if err != nil {
