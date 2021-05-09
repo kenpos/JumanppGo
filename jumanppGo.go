@@ -81,7 +81,7 @@ func stuffingDic(str string) []Dic {
 }
 
 func jumanpp(str string) string {
-	cmdstr := "echo \"" + str + "\"|jumanpp.exe --model=jumandic.jppmdl --force-single-path"
+	cmdstr := "echo " + str + "|jumanpp.exe --model=jumandic.jppmdl --force-single-path"
 	stdout, err := exec.Command("sh", "-c", cmdstr).Output()
 	if err != nil {
 		log.Fatal(err)
