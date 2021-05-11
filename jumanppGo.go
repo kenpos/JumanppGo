@@ -109,7 +109,7 @@ func checkVolume(listdata StandardDic, dic []Dic) StandardDic {
 			}
 		}
 	}
-	listdata.Value = s.Value
+	listdata.Value = 0.000000001
 	return listdata
 }
 
