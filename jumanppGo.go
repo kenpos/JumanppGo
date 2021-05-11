@@ -101,7 +101,6 @@ func initData() string {
 }
 
 func checkVolume(listdata StandardDic, dic []Dic) StandardDic {
-	truee := false
 	for _, s := range dic {
 		if listdata.Midasi == s.Midasi {
 			if listdata.Yomi == s.Yomi {
