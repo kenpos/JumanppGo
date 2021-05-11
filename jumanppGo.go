@@ -106,14 +106,10 @@ func checkVolume(listdata StandardDic, dic []Dic) StandardDic {
 		if listdata.Midasi == s.Midasi {
 			if listdata.Yomi == s.Yomi {
 				listdata.Value = s.Value
-				truee = true
+				return listdata
 			}
 		}
 	}
-	if truee == false {
-		listdata.Value = "0.0"
-	}
-	truee = false
 	return listdata
 }
 
