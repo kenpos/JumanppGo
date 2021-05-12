@@ -1,6 +1,7 @@
 package jumanppGo
 
 import (
+	"fmt"
 	"io/ioutil"
 	"os/exec"
 	"regexp"
@@ -87,6 +88,7 @@ func jumanpp(str string) string {
 	cmdstr := "echo " + str + "|jumanpp.exe --model=jumandic.jppmdl --force-single-path"
 	stdout, err := exec.Command("sh", "-c", cmdstr).Output()
 	if err != nil {
+		fmt.Println(cmdstr)
 		log.Fatal(err)
 	}
 	return string(stdout)
